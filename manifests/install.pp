@@ -11,6 +11,7 @@ class profile_base::install {
   include ntp
 
   class { '::puppet::profile::agent':
-    manage_repos => false,
+    manage_repos      => false,
+    manage_etc_facter => false,
   }
 }
