@@ -34,7 +34,15 @@ describe 'profile_base class' do
       it { is_expected.to be_enabled }
       it { is_expected.to be_running }
     end
-  
+
+    describe package('puppet') do
+      it { is_expected.to be_installed }
+    end
+
+    describe service('puppet') do
+      it { is_expected.to be_enabled }
+      it { is_expected.to be_running }
+    end  
 
   end
 end
