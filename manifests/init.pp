@@ -9,5 +9,8 @@
 #
 class profile_base
 {
-    include ntp
+  class { '::profile_base::install': } ->
+  class { '::profile_base::config': } ~>
+  class { '::profile_base::service': } ->
+  Class['::profile_base']
 }

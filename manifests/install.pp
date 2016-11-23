@@ -8,7 +8,9 @@ class profile_base::install {
     fail("Use of private class ${name} by ${caller_module_name}")
   }
 
-  package { $::profile_base::package_name:
-    ensure => present,
+  include ntp
+
+  class { '::puppet::profile::agent':
+    manage_repos => false,
   }
 }

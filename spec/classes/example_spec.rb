@@ -16,8 +16,9 @@ describe 'profile_base' do
           it { is_expected.to compile.with_all_deps }
           it { is_expected.to contain_class('profile_base') }
 
-          it { is_expected.to contain_class('profile_base') }
-  
+          it { is_expected.to contain_class('profile_base::install') }
+          it { is_expected.to contain_class('profile_base::config') }
+          it { is_expected.to contain_class('profile_base::service') }
 
         end
       end
