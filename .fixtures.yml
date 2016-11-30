@@ -8,7 +8,6 @@ fixtures:
     ntp:
       repo: "https://github.com/puppetlabs/puppetlabs-ntp.git"
       ref: "4.2.0"
-    rspec_monitor: "git://github.com/pgomersbach/test-rspec_monitor.git"
     puppet: "https://github.com/abstractitptyltd/abstractit-puppet.git"
     inifile: "https://github.com/puppetlabs/puppetlabs-inifile.git"
     apt: "https://github.com/puppetlabs/puppetlabs-apt.git"
