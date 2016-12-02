@@ -4,17 +4,5 @@
 # It sets variables according to platform.
 #
 class profile_base::params {
-  case $::osfamily {
-    'Debian': {
-      $package_name = 'profile_base'
-      $service_name = 'profile_base'
-    }
-    'RedHat', 'Amazon': {
-      $package_name = 'profile_base'
-      $service_name = 'profile_base'
-    }
-    default: {
-      fail("${::operatingsystem} not supported")
-    }
-  }
+    $ntpservers = [ '172.18.99.210', '172.18.99.211' ]
 }

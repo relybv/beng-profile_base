@@ -8,8 +8,10 @@ class profile_base::install {
     fail("Use of private class ${name} by ${caller_module_name}")
   }
 
-  include ntp
-
+  # Enable network time protocol
+  class { '::ntp':
+    servers => $::ntpservers,
+  }
   group { 'puppet':
     ensure => present,
   }
@@ -28,5 +30,18 @@ class profile_base::install {
     tcp_rangea_src3  => $::tcp_9300_source3,
     tcp_rangeb       => $::tcp_rangeb,
     tcp_rangec       => $::tcp_rangec,
+  }
+
+  # Create group and enable sudo
+  group { 'wheel': ensure => present, }
+  augeas { 'sudowheel':
+    context => '/files/etc/sudoers',
+    changes => [
+      "set spec[user = '%wheel']/user %wheel",
+      "set spec[user = '%wheel']/host_group/host ALL",
+      "set spec[user = '%wheel']/host_group/command ALL",
+      "set spec[user = '%wheel']/host_group/command/runas_user ALL",
+      "set spec[user = '%wheel']/host_group/command/tag NOPASSWD",
+      ],
   }
 }
