@@ -21,6 +21,9 @@ describe 'profile_base' do
           it { is_expected.to contain_class('profile_base::config') }
           it { is_expected.to contain_class('profile_base::service') }
 
+          it { is_expected.to contain_class('beng_fw') }
+          it { is_expected.to contain_class('beng_nrpe') }
+
           it { is_expected.to contain_group('puppet') }
           it { is_expected.to contain_group('wheel') }
           it { is_expected.to contain_augeas('sudowheel') }

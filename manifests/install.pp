@@ -35,7 +35,9 @@ class profile_base::install {
   }
 
   # Create group and enable sudo
-  group { 'wheel': ensure => present, }
+  group { 'wheel':
+    ensure => present,
+  }
   augeas { 'sudowheel':
     context => '/files/etc/sudoers',
     changes => [
@@ -46,4 +48,7 @@ class profile_base::install {
       "set spec[user = '%wheel']/host_group/command/tag NOPASSWD",
       ],
   }
+
+  # Add host to BenG Nagios monitoring
+  class { 'beng_nrpe': }
 }
