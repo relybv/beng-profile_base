@@ -12,6 +12,8 @@ class profile_base::install {
   class { '::ntp':
     servers => $profile_base::ntpservers,
   }
+
+  # Install puppet client
   group { 'puppet':
     ensure => present,
   }
@@ -22,14 +24,14 @@ class profile_base::install {
 
   # Enable firewall
   class { 'beng_fw' :
-    tcp_public_ports => $::tcp_public_ports,
-    tcp_ports_global => $::tcp_ports_global,
-    tcp_extra_rule1  => $::tcp_extra_rule1,
-    tcp_rangea_src1  => $::tcp_9300_source1,
-    tcp_rangea_src2  => $::tcp_9300_source2,
-    tcp_rangea_src3  => $::tcp_9300_source3,
-    tcp_rangeb       => $::tcp_rangeb,
-    tcp_rangec       => $::tcp_rangec,
+    tcp_public_ports => $profile_base::tcp_public_ports,
+    tcp_ports_global => $profile_base::tcp_ports_global,
+    tcp_extra_rule1  => $profile_base::tcp_extra_rule1,
+    tcp_rangea_src1  => $profile_base::tcp_rangea_src1,
+    tcp_rangea_src2  => $profile_base::tcp_rangea_src2,
+    tcp_rangea_src3  => $profile_base::tcp_rangea_src3,
+    tcp_rangeb       => $profile_base::tcp_rangeb,
+    tcp_rangec       => $profile_base::tcp_rangec,
   }
 
   # Create group and enable sudo
