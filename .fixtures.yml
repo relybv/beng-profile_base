@@ -11,5 +11,7 @@ fixtures:
     puppet: "https://github.com/abstractitptyltd/abstractit-puppet.git"
     inifile: "https://github.com/puppetlabs/puppetlabs-inifile.git"
     apt: "https://github.com/puppetlabs/puppetlabs-apt.git"
+    firewall: "https://github.com/puppetlabs/puppetlabs-firewall.git"
+    beng_fw: "https://github.com/relybv/beng-beng_fw.git"
   symlinks:
     profile_base: "#{source_dir}"
