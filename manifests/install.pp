@@ -10,7 +10,7 @@ class profile_base::install {
 
   # Enable network time protocol
   class { '::ntp':
-    servers => $::ntpservers,
+    servers => $profile_base::ntpservers,
   }
   group { 'puppet':
     ensure => present,
