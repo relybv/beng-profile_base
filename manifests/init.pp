@@ -25,7 +25,6 @@ class profile_base
   $tcp_extra_rule1 =  $::beng_base::params::tcp_extra_rule1,
   $tcp_extra_rule1_dport = $::beng_base::params::tcp_extra_rule1_dport,
   $tcp_extra_rule1_source = $::beng_base::params::tcp_extra_rule1_source,
-  $tcp_extra_rule1_src_range =  $::beng_base::params::tcp_extra_rule1_src_range,
 ) inherits ::profile_base::params {
 
 
