@@ -7,7 +7,6 @@ class profile_base::params {
   $ntpservers = [ '172.18.99.210', '172.18.99.211' ]
   $tcp_public_ports = false
   $tcp_ports_global = [ '20','21','22','80','443','445','1556','5666','8000','9100','9200','13720','13724' ]
-  $tcp_extra_rule1 = false
   $tcp_rangea_src1 = false
   $tcp_rangea_src2 = false
   $tcp_rangea_src3 = false
@@ -21,4 +20,8 @@ class profile_base::params {
   $internal_netc = '178.249.248.128/25'
   $udp_ports = [ '53','123','161']
   $tcp_rangea_ports = false
+  $tcp_extra_rule1 = false
+  $tcp_extra_rule1_dport = false
+  $tcp_extra_rule1_source = false
+  $tcp_extra_rule1_src_range = false
 }
