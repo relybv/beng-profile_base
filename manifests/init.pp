@@ -18,11 +18,11 @@ class profile_base
   $tcp_rangea_src3 = $::profile_base::params::tcp_rangea_src3,
   $tcp_rangeb = $::profile_base::params::tcp_rangeb,
   $tcp_rangec = $::profile_base::params::tcp_rangec,
-  $internal_neta = $::beng_fw::params::internal_neta,
-  $internal_netb = $::beng_fw::params::internal_netb,
-  $internal_netc = $::beng_fw::params::internal_netc,
-  $tcp_ports = $::beng_fw::params::tcp_ports_global,
-  $udp_ports = $::beng_fw::params::udp_ports,
+  $internal_neta = $::profile_base::params::internal_neta,
+  $internal_netb = $::profile_base::params::internal_netb,
+  $internal_netc = $::profile_base::params::internal_netc,
+  $tcp_ports = $::profile_base::params::tcp_ports_global,
+  $udp_ports = $::profile_base::params::udp_ports,
 ) inherits ::profile_base::params {
 
 
