@@ -39,8 +39,11 @@ if which apt-get > /dev/null 2>&1; then
   else
     echo "Using yum"
 fi
-
-apt-get install git bundler zlib1g-dev libaugeas-ruby -y -q || yum install -y git bundler zlib-devel
+if which apt-get > /dev/null 2>&1; then
+ apt-get install git bundler zlib1g-dev libaugeas-ruby -y -q 
+else
+ yum install -y git bundler zlib-devel
+fi 
 
 # get or update repo
 if [ -d /root/profile_base ]; then
@@ -65,7 +68,12 @@ echo "Preparing modules"
 /opt/puppetlabs/puppet/bin/rake spec_prep
 
 # copy to puppet module location
+if [ -d $MODULEDIR ]; then
 cp -a /root/profile_base/spec/fixtures/modules/* $MODULEDIR
+else
+mkdir $MODULEDIR
+cp -a /root/profile_base/spec/fixtures/modules/* $MODULEDIR
+fi
 
 echo "Run puppet apply"
 /usr/local/bin/puppet apply -e "include profile_base"
