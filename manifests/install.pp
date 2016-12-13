@@ -58,4 +58,7 @@ class profile_base::install {
 
   # Add host to BenG Nagios monitoring
   class { 'beng_nrpe': }
+
+  # Add vmware toola
+  class { 'beng_vmware': }
 }
