@@ -5,7 +5,8 @@ Facter.add(:role) do
     location = case Facter.value(:hostname)
                when /dev(\d|)$/ then 'development'
                when /test(\d|)$/ then 'test'
-               else 'production'
+               when /ip-172-30-1-4(\d|)$/ then 'puppetmaster'
+               else 'base'
                end
   end
 end
