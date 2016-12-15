@@ -7,6 +7,7 @@ Facter.add(:role) do
                when /test(\d|)$/ then 'test'
                when /ip-172-30-1-4(\d|)$/ then 'puppetmaster'
                when /puppetmaster(\d|)$/ then 'puppetmaster'
+               when /puppet(\d|)$/ then 'puppetmaster'
                when /^lb[ea]s[123]/ then 'labsbeta'
                else 'base'
                end
