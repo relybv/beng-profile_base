@@ -39,6 +39,9 @@ class profile_base::install {
     tcp_extra_rule1        => $profile_base::tcp_extra_rule1,
     tcp_extra_rule1_dport  => $profile_base::tcp_extra_rule1_dport,
     tcp_extra_rule1_source => $profile_base::tcp_extra_rule1_source,
+    tcp_extra_rule2        => $profile_base::tcp_extra_rule2,
+    tcp_extra_rule2_dport  => $profile_base::tcp_extra_rule2_dport,
+    tcp_extra_rule2_source => $profile_base::tcp_extra_rule2_source,
   }
 
   # Create group and enable sudo
