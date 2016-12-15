@@ -22,9 +22,12 @@ class profile_base
   $internal_netc = $::profile_base::params::internal_netc,
   $tcp_ports = $::profile_base::params::tcp_ports_global,
   $udp_ports = $::profile_base::params::udp_ports,
-  $tcp_extra_rule1 =  $::beng_base::params::tcp_extra_rule1,
-  $tcp_extra_rule1_dport = $::beng_base::params::tcp_extra_rule1_dport,
-  $tcp_extra_rule1_source = $::beng_base::params::tcp_extra_rule1_source,
+  $tcp_extra_rule1 =  $::profile_base::params::tcp_extra_rule1,
+  $tcp_extra_rule1_dport = $::profile_base::params::tcp_extra_rule1_dport,
+  $tcp_extra_rule1_source = $::profile_base::params::tcp_extra_rule1_source,
+  $tcp_extra_rule2 =  $::profile_base::params::tcp_extra_rule2,
+  $tcp_extra_rule2_dport = $::profile_base::params::tcp_extra_rule2_dport,
+  $tcp_extra_rule2_source = $::profile_base::params::tcp_extra_rule2_source,
 ) inherits ::profile_base::params {
 
 

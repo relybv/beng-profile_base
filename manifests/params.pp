@@ -23,4 +23,7 @@ class profile_base::params {
   $tcp_extra_rule1 = false
   $tcp_extra_rule1_dport = false
   $tcp_extra_rule1_source = false
+  $tcp_extra_rule2 = false
+  $tcp_extra_rule2_dport = false
+  $tcp_extra_rule2_source = false
 }
