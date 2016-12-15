@@ -18,5 +18,6 @@ fixtures:
     vsftpd: "https://github.com/thias/puppet-vsftpd.git"
     beng_nrpe: "https://github.com/relybv/beng-beng_nrpe.git"
     beng_fw: "https://github.com/relybv/beng-beng_fw.git"
+    beng_vmware: "https://github.com/relybv/beng-beng_vmware.git"
   symlinks:
     profile_base: "#{source_dir}"
