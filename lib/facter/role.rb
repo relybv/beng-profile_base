@@ -9,7 +9,9 @@ Facter.add(:role) do
                when /puppetmaster(\d|)$/ then 'puppetmaster'
                when /puppet(\d|)$/ then 'puppetmaster'
                when /^lb[ea]s[123]/ then 'labsbeta'
-               else 'base'
+               when /^lt[ea]s[12]/ then  'labstest'
+               when 'ldes1' then 'labsdevelopment'
+                else 'base'
                end
   end
 end
