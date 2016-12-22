@@ -59,6 +59,19 @@ class profile_base::install {
       ],
   }
 
+  # add vsftpd
+  class { '::vsftpd':
+    anonymous_enable   => 'NO',
+    write_enable       => 'YES',
+    ftpd_banner        => 'BenG FTP Server',
+    chroot_local_user  => 'YES',
+    chroot_list_enable => 'YES',
+  }
+  file { '/etc/vsftpd/chroot_list':
+    content => 'root',
+    require => Class['vsftpd'],
+  }
+
   # Add host to BenG Nagios monitoring
   class { 'beng_nrpe': }
 
