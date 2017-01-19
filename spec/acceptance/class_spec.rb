@@ -18,8 +18,8 @@ describe 'profile_base class' do
         EOS
 
         # Run it twice and test for idempotency
-        apply_manifest(pp, :catch_failures => true, :future_parser => true)
-        apply_manifest(pp, :catch_changes  => true, :future_parser => true)
+        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, :catch_changes  => true)
       end
     end
 
@@ -30,19 +30,38 @@ describe 'profile_base class' do
       it { is_expected.to be_installed }
     end
 
-    describe service('ntp') do
+    describe service('ntpd') do
       it { is_expected.to be_enabled }
       it { is_expected.to be_running }
     end
 
-    describe package('puppet') do
+    describe package('puppet-agent') do
       it { is_expected.to be_installed }
     end
 
     describe service('puppet') do
       it { is_expected.to be_enabled }
       it { is_expected.to be_running }
-    end  
+    end
+
+    describe package('vsftpd') do
+      it { is_expected.to be_installed }
+    end
+
+    describe service('vsftpd') do
+      it { is_expected.to be_enabled }
+      it { is_expected.to be_running }
+    end
+
+    describe package('net-snmp') do
+      it { is_expected.to be_installed }
+    end
+
+    describe service('snmpd') do
+      it { is_expected.to be_enabled }
+      it { is_expected.to be_running }
+    end
+
 
   end
 end
