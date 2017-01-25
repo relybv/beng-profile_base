@@ -27,6 +27,8 @@ describe 'profile_base' do
           it { is_expected.to contain_group('puppet') }
           it { is_expected.to contain_group('wheel') }
           it { is_expected.to contain_augeas('sudowheel') }
+
+          it { is_expected.to contain_file('/etc/vsftpd/chroot_list') }
         end
       end
     end
