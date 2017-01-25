@@ -14,9 +14,8 @@ class profile_base::install {
   }
 
   # Install puppet client
-  group { 'puppet':
-    ensure => present,
-  }
+  ensure_resource('group', 'puppet', {'ensure' => 'present'})
+
   class { '::puppet::profile::agent':
     manage_repos => false,
     require      => Group['puppet'],
