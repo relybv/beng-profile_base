@@ -31,8 +31,8 @@ class profile_base
 ) inherits ::profile_base::params {
 
 
-  class { '::profile_base::install': } ->
-  class { '::profile_base::config': } ~>
-  class { '::profile_base::service': } ->
-  Class['::profile_base']
+  class { '::profile_base::install': }
+  -> class { '::profile_base::config': }
+  ~> class { '::profile_base::service': }
+  -> Class['::profile_base']
 }
