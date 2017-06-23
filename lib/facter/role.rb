@@ -3,6 +3,7 @@ require 'facter'
 Facter.add(:role) do
   setcode do
     location = case Facter.value(:hostname)
+               when /^dev[wea]s200[12]/ then 'labsbeta'
                when /dev(\d|)$/ then 'development'
                when /test(\d|)$/ then 'test'
                when /ip-172-30-1-4(\d|)$/ then 'puppetmaster'
