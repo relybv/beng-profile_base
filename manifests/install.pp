@@ -33,6 +33,8 @@ class profile_base::install {
     internal_neta          => $profile_base::internal_neta,
     internal_netb          => $profile_base::internal_netb,
     internal_netc          => $profile_base::internal_netc,
+    internal_netd          => $profile_base::internal_netd,
+    internal_nete          => $profile_base::internal_nete,
     tcp_ports              => $profile_base::tcp_ports_global,
     udp_ports              => $profile_base::udp_ports,
     tcp_extra_rule1        => $profile_base::tcp_extra_rule1,
